@@ -97,51 +97,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gH-ca-K0l">
-                                <rect key="frame" x="419" y="73" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gH-ca-K0l" userLabel="fast">
+                                <rect key="frame" x="460" y="73" width="100" height="100"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="fast" label="fast"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="WHT-u3-SfM"/>
+                                    <constraint firstAttribute="width" constant="100" id="fdW-p3-eS7"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="fast"/>
                                 <connections>
-                                    <action selector="playFast:" destination="h5I-sw-t6H" eventType="touchUpInside" id="rPh-SF-a7u"/>
+                                    <action selector="playAudioWithSpeed:" destination="h5I-sw-t6H" eventType="touchUpInside" id="dlh-i5-Www"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNH-ng-6hU">
-                                <rect key="frame" x="20" y="525" width="560" height="50"/>
+                                <rect key="frame" x="20" y="515" width="560" height="50"/>
                                 <animations/>
                                 <state key="normal" title="Button" image="stop"/>
                                 <connections>
                                     <action selector="stop:" destination="h5I-sw-t6H" eventType="touchUpInside" id="Tqw-u8-rJW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1N-Te-rUY">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1N-Te-rUY" userLabel="slow">
                                 <rect key="frame" x="14" y="72" width="100" height="100"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="slow" label="slow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4QJ-ya-vtH"/>
                                     <constraint firstAttribute="width" constant="100" id="Un7-RP-NjR"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="slow"/>
                                 <connections>
-                                    <action selector="playSlow:" destination="h5I-sw-t6H" eventType="touchUpInside" id="j96-py-F4V"/>
+                                    <action selector="playAudioWithSpeed:" destination="h5I-sw-t6H" eventType="touchUpInside" id="fEH-LO-Lg9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay9-lM-vnC">
-                                <rect key="frame" x="420" y="228" width="98" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay9-lM-vnC" userLabel="vader">
+                                <rect key="frame" x="460" y="210" width="100" height="100"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="vader" label="vader"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="IPq-V1-r1b"/>
+                                    <constraint firstAttribute="height" constant="100" id="QrL-Ka-81H"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="vader"/>
                                 <connections>
-                                    <action selector="playVader:" destination="h5I-sw-t6H" eventType="touchUpInside" id="Ib7-0x-5wg"/>
+                                    <action selector="playAudioWithPitch:" destination="h5I-sw-t6H" eventType="touchUpInside" id="Mnj-XT-eXa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFw-F8-fY2">
-                                <rect key="frame" x="24" y="364" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFw-F8-fY2">
+                                <rect key="frame" x="24" y="354" width="80" height="80"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="echo" label="echo"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="KtS-0E-QXX"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="MYg-N4-RHv"/>
+                                    <constraint firstAttribute="width" constant="80" id="KtS-0E-QXX"/>
+                                    <constraint firstAttribute="height" constant="80" id="MYg-N4-RHv"/>
                                     <constraint firstAttribute="height" constant="80" id="bse-CS-xEM"/>
                                     <constraint firstAttribute="width" constant="80" id="dgl-W1-XZL"/>
                                 </constraints>
@@ -150,21 +159,23 @@
                                     <action selector="playAudioWithEcho:" destination="h5I-sw-t6H" eventType="touchUpInside" id="9qA-Ga-gin"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGX-NT-2us">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGX-NT-2us" userLabel="chipmunk">
                                 <rect key="frame" x="14" y="209" width="100" height="100"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="chipmunk" label="chipmunk"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Lm4-At-Idc"/>
                                     <constraint firstAttribute="width" constant="100" id="SuG-yr-n7E"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="chipmunk"/>
                                 <connections>
-                                    <action selector="playChipmunk:" destination="h5I-sw-t6H" eventType="touchUpInside" id="3xS-Vt-uaQ"/>
+                                    <action selector="playAudioWithPitch:" destination="h5I-sw-t6H" eventType="touchUpInside" id="Oaz-bc-jYn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWC-4p-CvA">
-                                <rect key="frame" x="429" y="370" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWC-4p-CvA">
+                                <rect key="frame" x="470" y="360" width="80" height="80"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="reverb" label="reverb"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="KQZ-72-sut"/>
                                     <constraint firstAttribute="height" constant="80" id="rcE-Cq-O7Z"/>
@@ -180,16 +191,14 @@
                         <constraints>
                             <constraint firstItem="0gH-ca-K0l" firstAttribute="top" secondItem="Mbk-ee-mkx" secondAttribute="bottom" constant="9" id="3JC-2G-KFH"/>
                             <constraint firstItem="lNH-ng-6hU" firstAttribute="leading" secondItem="dgH-cd-HzL" secondAttribute="leadingMargin" id="6ZY-sl-eDK"/>
+                            <constraint firstItem="ay9-lM-vnC" firstAttribute="leading" secondItem="0gH-ca-K0l" secondAttribute="leading" id="7ES-Zg-dcI"/>
                             <constraint firstItem="lNH-ng-6hU" firstAttribute="top" secondItem="aFw-F8-fY2" secondAttribute="bottom" constant="81" id="Dr5-s4-ghg"/>
-                            <constraint firstItem="jGX-NT-2us" firstAttribute="baseline" secondItem="ay9-lM-vnC" secondAttribute="baseline" id="GcC-bM-XzY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0gH-ca-K0l" secondAttribute="trailing" constant="61" id="GhZ-hr-RgV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0gH-ca-K0l" secondAttribute="trailing" constant="20" id="GhZ-hr-RgV"/>
                             <constraint firstItem="lNH-ng-6hU" firstAttribute="top" secondItem="BWC-4p-CvA" secondAttribute="bottom" constant="75" id="IrO-IB-1t7"/>
                             <constraint firstItem="ay9-lM-vnC" firstAttribute="top" secondItem="0gH-ca-K0l" secondAttribute="bottom" constant="37" id="OuO-Vx-sBH"/>
                             <constraint firstItem="BWC-4p-CvA" firstAttribute="top" secondItem="ay9-lM-vnC" secondAttribute="bottom" constant="50" id="RLw-N0-9ZD"/>
-                            <constraint firstItem="aFw-F8-fY2" firstAttribute="top" secondItem="jGX-NT-2us" secondAttribute="bottom" constant="55" id="Sic-dY-1at"/>
+                            <constraint firstItem="aFw-F8-fY2" firstAttribute="top" secondItem="jGX-NT-2us" secondAttribute="bottom" priority="750" constant="55" id="Sic-dY-1at"/>
                             <constraint firstItem="lNH-ng-6hU" firstAttribute="trailing" secondItem="dgH-cd-HzL" secondAttribute="trailingMargin" id="Y6b-gf-4lH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ay9-lM-vnC" secondAttribute="trailing" constant="62" id="aJQ-XK-EdL"/>
-                            <constraint firstItem="jGX-NT-2us" firstAttribute="centerX" secondItem="aFw-F8-fY2" secondAttribute="centerX" id="aj9-XK-vOf"/>
                             <constraint firstItem="jGX-NT-2us" firstAttribute="top" secondItem="S1N-Te-rUY" secondAttribute="bottom" constant="37" id="bDH-L9-LJD"/>
                             <constraint firstItem="lNH-ng-6hU" firstAttribute="centerX" secondItem="dgH-cd-HzL" secondAttribute="centerX" id="h7j-lA-mFe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BWC-4p-CvA" secondAttribute="trailing" constant="30" id="jxt-O0-VNB"/>
@@ -198,13 +207,20 @@
                             <constraint firstItem="ay9-lM-vnC" firstAttribute="baseline" secondItem="jGX-NT-2us" secondAttribute="firstBaseline" id="oJ3-Xp-CP9"/>
                             <constraint firstItem="S1N-Te-rUY" firstAttribute="top" secondItem="Mbk-ee-mkx" secondAttribute="bottom" constant="8" symbolic="YES" id="pdG-p4-iYc"/>
                             <constraint firstItem="S1N-Te-rUY" firstAttribute="leading" secondItem="dgH-cd-HzL" secondAttribute="leadingMargin" constant="-6" id="pvK-ol-kcC"/>
+                            <constraint firstItem="BWC-4p-CvA" firstAttribute="leading" secondItem="ay9-lM-vnC" secondAttribute="leading" id="r2V-d9-TIl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BWC-4p-CvA" secondAttribute="trailing" constant="71" id="tDc-nZ-psF"/>
+                            <constraint firstItem="BWC-4p-CvA" firstAttribute="centerX" secondItem="ay9-lM-vnC" secondAttribute="centerX" id="tU8-nm-unr"/>
                             <constraint firstItem="BWC-4p-CvA" firstAttribute="centerX" secondItem="ay9-lM-vnC" secondAttribute="centerX" id="wLn-Zg-UyN"/>
                             <constraint firstItem="jGX-NT-2us" firstAttribute="leading" secondItem="S1N-Te-rUY" secondAttribute="leading" id="yUp-yF-XVU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="lB1-63-sfk"/>
+                                <exclude reference="oJ3-Xp-CP9"/>
                                 <exclude reference="jxt-O0-VNB"/>
+                                <exclude reference="r2V-d9-TIl"/>
+                                <exclude reference="tDc-nZ-psF"/>
+                                <exclude reference="wLn-Zg-UyN"/>
                             </mask>
                         </variation>
                     </view>
