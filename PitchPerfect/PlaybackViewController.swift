@@ -52,56 +52,54 @@ class PlaybackViewController : UIViewController{
 
     @IBAction func playAudioWithPitch(sender: UIButton){
         stopPlayback()
-        let audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
-        audioPlayerNode.volume = 100
         let changePitchEffect = AVAudioUnitTimePitch()
-        if(sender.accessibilityIdentifier == "chipmunk"){
-            changePitchEffect.pitch = 1000
+        switch(sender.accessibilityIdentifier!){
+            case "chipmunk":
+                changePitchEffect.pitch = 1000
+                break
+            case "vader":
+                changePitchEffect.pitch = -1000
+                break
+        default: //Just in case
+            changePitchEffect.pitch=0
         }
-        else if(sender.accessibilityIdentifier == "vader"){
-            changePitchEffect.pitch = -1000
-        }
-        audioEngine.attachNode(changePitchEffect)
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
-        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        try! audioEngine.start()
-        audioPlayerNode.play()
+        setupAndPlayAudio(changePitchEffect)
+        
     }
     @IBAction func playAudioWithEcho(sender: AnyObject) {
         stopPlayback()
         let echoNode = AVAudioUnitDelay()
-        let audioPlayer = AVAudioPlayerNode()
         echoNode.delayTime = NSTimeInterval(0.2)
-        audioEngine.attachNode(audioPlayer)
-        audioEngine.attachNode(echoNode)
-        audioEngine.connect(audioPlayer, to: echoNode, format: nil)
-        audioEngine.connect(echoNode, to: audioEngine.outputNode, format: nil)
-        audioPlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        try! audioEngine.start()
-        audioPlayer.play()
+        setupAndPlayAudio(echoNode)
     }
     
     @IBAction func playAudioWithReverb(sender: AnyObject) {
         stopPlayback()
-        let audioPlayerNode = AVAudioPlayerNode()
         let reverb = AVAudioUnitReverb()
         reverb.loadFactoryPreset(AVAudioUnitReverbPreset.Cathedral)
         reverb.wetDryMix = 60
-        audioEngine.attachNode(audioPlayerNode)
-        audioEngine.attachNode(reverb)
-        audioEngine.connect(audioPlayerNode, to: reverb, format: nil)
-        audioEngine.connect(reverb, to: audioEngine.outputNode, format: nil)
-        audioPlayerNode.volume = 100
-        try! audioEngine.start()
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        audioPlayerNode.play()
+        setupAndPlayAudio(reverb)
     }
     
     func stopPlayback(){
         audioEngine.stop()
         audioEngine.reset()
+    }
+    
+    /**This function is to act as our playback method for all of our calls that need a specific sound effect played. For
+     * speed changes, this doesn't quite work without making the code a bit more cumbersome to work with, so I figured it was best
+     to keep code affecting speed and audio effects separate. This does at least clean up each method so that they don't have a ton of boilerplate code to setup and playback the file
+    */
+    func setupAndPlayAudio(audioEffect:AVAudioNode=AVAudioPlayerNode()){
+        let audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        audioEngine.attachNode(audioEffect)
+        audioEngine.connect(audioPlayerNode, to: audioEffect, format: nil)
+        audioEngine.connect(audioEffect, to: audioEngine.outputNode, format: nil)
+        audioPlayerNode.volume = 100
+        try! audioEngine.start()
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioPlayerNode.play()
     }
     
     
