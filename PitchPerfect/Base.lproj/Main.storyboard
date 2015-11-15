@@ -110,14 +110,6 @@
                                     <action selector="playAudioWithSpeed:" destination="h5I-sw-t6H" eventType="touchUpInside" id="dlh-i5-Www"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNH-ng-6hU">
-                                <rect key="frame" x="20" y="515" width="560" height="50"/>
-                                <animations/>
-                                <state key="normal" title="Button" image="stop"/>
-                                <connections>
-                                    <action selector="stop:" destination="h5I-sw-t6H" eventType="touchUpInside" id="Tqw-u8-rJW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1N-Te-rUY" userLabel="slow">
                                 <rect key="frame" x="14" y="72" width="100" height="100"/>
                                 <animations/>
@@ -185,20 +177,31 @@
                                     <action selector="playAudioWithReverb:" destination="h5I-sw-t6H" eventType="touchUpInside" id="gYz-vi-js3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNH-ng-6hU">
+                                <rect key="frame" x="275" y="524" width="50" height="50"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="stop" label="stop"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="aQ2-Yj-dab"/>
+                                    <constraint firstAttribute="height" constant="50" id="zu1-ZE-G0a"/>
+                                </constraints>
+                                <state key="normal" image="stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="h5I-sw-t6H" eventType="touchUpInside" id="Tqw-u8-rJW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0gH-ca-K0l" firstAttribute="top" secondItem="Mbk-ee-mkx" secondAttribute="bottom" constant="9" id="3JC-2G-KFH"/>
-                            <constraint firstItem="lNH-ng-6hU" firstAttribute="leading" secondItem="dgH-cd-HzL" secondAttribute="leadingMargin" id="6ZY-sl-eDK"/>
                             <constraint firstItem="ay9-lM-vnC" firstAttribute="leading" secondItem="0gH-ca-K0l" secondAttribute="leading" id="7ES-Zg-dcI"/>
-                            <constraint firstItem="lNH-ng-6hU" firstAttribute="top" secondItem="aFw-F8-fY2" secondAttribute="bottom" constant="81" id="Dr5-s4-ghg"/>
+                            <constraint firstItem="lNH-ng-6hU" firstAttribute="top" secondItem="aFw-F8-fY2" secondAttribute="bottom" constant="90" id="Dr5-s4-ghg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0gH-ca-K0l" secondAttribute="trailing" constant="20" id="GhZ-hr-RgV"/>
-                            <constraint firstItem="lNH-ng-6hU" firstAttribute="top" secondItem="BWC-4p-CvA" secondAttribute="bottom" constant="75" id="IrO-IB-1t7"/>
+                            <constraint firstItem="lNH-ng-6hU" firstAttribute="top" secondItem="BWC-4p-CvA" secondAttribute="bottom" constant="84" id="IrO-IB-1t7"/>
                             <constraint firstItem="ay9-lM-vnC" firstAttribute="top" secondItem="0gH-ca-K0l" secondAttribute="bottom" constant="37" id="OuO-Vx-sBH"/>
                             <constraint firstItem="BWC-4p-CvA" firstAttribute="top" secondItem="ay9-lM-vnC" secondAttribute="bottom" constant="50" id="RLw-N0-9ZD"/>
                             <constraint firstItem="aFw-F8-fY2" firstAttribute="top" secondItem="jGX-NT-2us" secondAttribute="bottom" priority="750" constant="55" id="Sic-dY-1at"/>
-                            <constraint firstItem="lNH-ng-6hU" firstAttribute="trailing" secondItem="dgH-cd-HzL" secondAttribute="trailingMargin" id="Y6b-gf-4lH"/>
                             <constraint firstItem="jGX-NT-2us" firstAttribute="top" secondItem="S1N-Te-rUY" secondAttribute="bottom" constant="37" id="bDH-L9-LJD"/>
                             <constraint firstItem="lNH-ng-6hU" firstAttribute="centerX" secondItem="dgH-cd-HzL" secondAttribute="centerX" id="h7j-lA-mFe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BWC-4p-CvA" secondAttribute="trailing" constant="30" id="jxt-O0-VNB"/>
